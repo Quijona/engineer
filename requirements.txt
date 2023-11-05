@@ -1,0 +1,5 @@
+sqlalchemy
+python-decouple
+requests
+pandas
+configparser
