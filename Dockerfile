@@ -1,23 +1,15 @@
-# Use an appropriate base image
 FROM python:3.10
 
-# Set the working directory within the image
 WORKDIR /app
 
-# Copy the local file to the working directory in the image
-COPY . /app/DESAFIO_0.1.py
+# Copia el archivo requirements.txt al directorio /app
+COPY requirements.txt .
 
+# Instala las bibliotecas desde el archivo requirements.txt
+RUN pip install -r requirements.txt
 
-# Rest of your Dockerfile
+# Copia el script DEASAFIO_0.1.py al directorio /app
+COPY DESAFIO_0.1.py .
 
-#RUN pip install --no-cache-dir -r requirements.txt
-
-# Specify the command to run when the container is started
+# Ejecuta el script DEASAFIO_0.1.py
 CMD ["python", "DESAFIO_0.1.py"]
-
-
-
-
-
-
-
